@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<htmlxmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<metacharset="utf-8"/>
+<title>Edit Fitness</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit Fitness</h1>
+        <br/>
+        <form action="#"th:action="@{/save}"th:object="${fitness}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>             
+                    <td>ID Peserta:</td>
+                    <td>
+                        <input type="text" th:field="*{id}" readonly="readonly"/>
+                    </td>
+                </tr>        
+                <tr>             
+                    <td>Nama Peserta:</td>
+                    <td>
+                        <input type="text" th:field="*{nama_peserta}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dept:</td>
+                    <td> <select name="dept" th:field="*{dept}">
+                    <option value="">Silahkan Pilih Dept</option>
+                    <option value="COD">COD</option>
+                    <option value="DOC">DOC</option>
+                    <option value="ABC">ABC</option>
+                    </select>
+                    
+                </tr>
+                <tr>
+                    <td>Tanggal Pendaftaran:</td>
+                    <td><input type="date" th:field="*{tgl_pendaftaran}"/></td>
+                </tr>
+               <tr>
+                    <td>Biaya:</td>
+                    <td><select name="biaya" th:field="*{biaya}">
+                    <option value="">Silahkan Pilih Biaya</option>
+                    <option value="150000">150000</option>
+                    <option value="200000">200000</option>
+                    <option value="350000">350000</option> 
+                    </select>
+                </tr>                            
+                <tr>
+                    <td colspan="2"> <button type="submit">Save</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

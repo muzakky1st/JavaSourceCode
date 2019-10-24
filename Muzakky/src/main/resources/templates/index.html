@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fitness</title>
+</head>
+<body>
+<div align="center">
+		<h1>Fitness List</h1>
+		<a href="/new">Create New Fitness</a> <br /> <br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Fitness ID</th>
+					<th>Nama Peserta</th>
+					<th>Dept</th>
+					<th>Tanggal Pendaftaran</th>
+					<th>Biaya</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fitness : ${listFitnessx}">
+					<td th:text="${fitness.id}">Fitness ID</td>
+					<td th:text="${fitness.nama_peserta}">Nama Peserta</td>
+					<td th:text="${fitness.dept}">Departement</td>
+					<td th:text="${fitness.tgl_pendaftaran}">Tanggal Pendaftaran</td>
+					<td th:text="${fitness.biaya}">Biaya</td>
+					
+					<td><a th:href="@{'/edit/'+ ${fitness.id}}">Edit</a>
+						&nbsp;&nbsp;&nbsp;<a th:href="@{'/delete/' + ${fitness.id}}">Delete</a></td>
+						
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
